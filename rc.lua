@@ -55,8 +55,7 @@ editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
 -- default browser
---browser = "\"" .. os.getenv("BROWSER") .. "\""
-browser = os.getenv("BROWSER")
+browser = "firefox"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
