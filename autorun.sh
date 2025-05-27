@@ -7,4 +7,4 @@ run() {
   fi
 }
 
-run "alacritty" -e tmux
+run "alacritty" -e tmux new-session "btm --battery"

@@ -55,7 +55,8 @@ editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
 -- default browser
-browser = os.getenv("BROWSER") or "firefox"
+--browser = "\"" .. os.getenv("BROWSER") .. "\""
+browser = os.getenv("BROWSER")
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -357,7 +358,8 @@ globalkeys = gears.table.join(
     -- Redshift Keys
     awful.key({modkey, "Shift"}, "Home", function() awful.spawn("redshift -x") end,
                 {description = "remove blue light filter", }),
-    awful.key({modkey, "Shift"}, "End", function() awful.spawn("redshift -x && redshift -O 2250") end,
+    awful.key({modkey, "Shift"}, "End", function() awful.spawn("redshift -x")
+                awful.spawn("redshift -O 2250") end,
                 {description = "add blue light filter", })
 )
 
@@ -526,8 +528,10 @@ awful.rules.rules = {
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
+    { rule = { class = "Alacritty" }, properties = { screen = 1, tag = "" } },
     { rule = { class = "Xfce4-terminal" }, properties = { screen = 1, tag = "" } },
-    { rule = { class = "Chromium" }, properties = { screen = 1, tag = "" } },
+    { rule = { class = "Firefox" }, properties = { screen = 1, tag = "" } },
+    { rule = { class = "Chromium" }, properties = { screen = 1, tag = "" } },
 }
 -- }}}
 
