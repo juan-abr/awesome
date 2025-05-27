@@ -7,4 +7,4 @@ run() {
   fi
 }
 
-run "xfce4-terminal" -x tmux
+run "alacritty" -e tmux

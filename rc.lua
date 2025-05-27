@@ -48,12 +48,14 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xfce4-terminal" or "terminal" or "alacritty"
+--terminal = "xfce4-terminal" or "gnome-terminal" or "alacritty" or "xterm"
+terminal = "alacritty"
+
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
 -- default browser
-browser = "chromium" or "firefox"
+browser = os.getenv("BROWSER") or "firefox"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -174,7 +176,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Each screen has its own tag table.
     -- Requires the "awesome-terminal-fonts" package
-    awful.tag({ "", "", "", "", "", "", "7", "", "" }, s, awful.layout.layouts[1])
+    awful.tag({ "", "", "", "", "", "", "7", "", "" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
