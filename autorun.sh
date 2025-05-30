@@ -8,3 +8,4 @@ run() {
 }
 
 run "alacritty" -e tmux new-session "btm --battery"
+run "blueberry-tray"

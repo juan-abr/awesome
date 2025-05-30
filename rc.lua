@@ -338,6 +338,11 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
 
+    -- working toggle titlebar
+    -- (not working currently)
+   --awful.key({ modkey, "Control" }, "t", function (c) awful.titlebar.toggle(c) end,
+   --          {description = "Show/Hide Titlebars", group="client"}),
+
     -- Volume Keys
     awful.key({}, "XF86AudioLowerVolume", function ()
         awful.util.spawn("amixer -q -D pulse sset Master 5%-", false) end),
@@ -547,6 +552,8 @@ client.connect_signal("manage", function (c)
         -- Prevent clients from being unreachable after screen count changes.
         awful.placement.no_offscreen(c)
     end
+
+    awful.titlebar.hide(c)
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
