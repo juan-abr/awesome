@@ -536,6 +536,7 @@ awful.rules.rules = {
     { rule = { class = "Xfce4-terminal" }, properties = { screen = 1, tag = "" } },
     { rule = { class = "Firefox" }, properties = { screen = 1, tag = "" } },
     { rule = { class = "Pixelorama" }, properties = { screen = 1, tag = "" } },
+    { rule = { class = "steam" }, properties = { screen = 1, tag = "7" } },
 }
 -- }}}
 
