@@ -365,7 +365,11 @@ globalkeys = gears.table.join(
                 {description = "remove blue light filter", }),
     awful.key({modkey, "Shift"}, "End", function() awful.spawn("redshift -x")
                 awful.spawn("redshift -O 2250") end,
-                {description = "add blue light filter", })
+                {description = "add blue light filter", }),
+
+    awful.key({ }, "Print", function () awful.util.spawn(
+        "scrot -e 'mv $f ~/Pictures/Screenshots/ 2>/dev/null'", false) end)
+
 )
 
 clientkeys = gears.table.join(
