@@ -360,6 +360,14 @@ globalkeys = gears.table.join(
     awful.key({}, "XF86AudioPrev", function()
         awful.util.spawn("playerctl previous", false) end),
 
+    -- Brightness Keys
+    awful.key({}, "XF86MonBrightnessUp", function()
+        awful.spawn("xbacklight +10", false) end,
+        {description = "brightness", }), --&& notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
+    awful.key({}, "XF86MonBrightnessDown", function()
+        awful.spawn("xbacklight -10", false) end,
+        {description = "brightness", }), --&& notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
+
     -- Redshift Keys
     awful.key({modkey, "Shift"}, "Home", function() awful.spawn("redshift -x") end,
                 {description = "remove blue light filter", }),
